@@ -4,7 +4,7 @@ import 'package:lista_tarefas/repositories/todo_repository.dart';
 import '../../widgets/todo_list_item.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+   const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                       child: TextField(
                         controller: todoController,
                         decoration:  InputDecoration(
-                            border:  OutlineInputBorder(),
+                            border:  const OutlineInputBorder(),
                             labelText: 'Adicionar uma Tarefa',
                             hintText: 'Estudar mais tarde',
                             errorText: errorText,
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     const SizedBox(
-                      width: 8,
+                      width: 4,
                     ),
                     ElevatedButton(
 
@@ -78,13 +78,13 @@ class _HomePageState extends State<HomePage> {
                         todoController.clear();
                         todoRepository.saveTodoList(todos);
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.add,
                         size: 32,
                       ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blueGrey,
-                        padding: EdgeInsets.all(16),
+                        padding: const EdgeInsets.all(16),
                       ),
                     ),
                   ],
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     ElevatedButton(
                       onPressed: showDeleteDialog,
-                      child: Text('Limpar Tarefas'),
+                      child: const Text('Limpar Tarefas'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blueGrey,
                         padding: EdgeInsets.all(14),
